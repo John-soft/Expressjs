@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Riddick",
+        "description": "A movie sponsored by father john and ir is so interesting to watch",
+        "duration": 119,
+        "ratings": 6.8,
+        "totalRating":325,
+        "releaseYear": 2013,
+        "releaseDate": "2013-09-04T00:00:00Z",
+        "genres": [
+            "Action",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "directors": [
+            "Thomas Shelby", 
+            "Fatherjon"
+            ],
+            "coverImage": "Riddick-2013.jpg",
+            "actors":[
+                "Vin Diesel",
+                "Father John",
+                "Terminator"
+            ],
+            "price": 50 
+    }
+]

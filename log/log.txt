@@ -1,0 +1,2 @@
+This query took 692 milliseconds to run the programA new movie document with the name A new movie collection has been created by Father John
+A new movie document with the name A new movie collection 2 has been created by Father John
