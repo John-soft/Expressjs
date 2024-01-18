@@ -1,9 +1,19 @@
-const { encodeXText } = require('nodemailer/lib/shared');
 const User = require('../model/userModel')
 const CustomError = require('../utils/CustomError');
 const asyncErrorHandler = require('../utils/asyncErrorHandler');
 const authController = require('./authController')
 
+const getAllUsers = asyncErrorHandler(async (req, res, next) => {
+    const users = await User.find()
+
+    res.status(200).json({
+        status: "Success",
+        length: users.length,
+        data: {
+            users
+        }
+    })
+})
 
 const filterReqObj = (obj, ...allowedFields) =>{
     const newObj = {}
@@ -42,7 +52,7 @@ const updateDetails = asyncErrorHandler(async (req, res, next) => {
     const updatedUser = await User.findByIdAndUpdate(req.user.id, filterObj, {runValidators: true, new: true})
 
     res.status(201).json({
-        status: 'Success',
+        status: 'Success', 
         data:{
             user: updatedUser
         }
@@ -62,5 +72,6 @@ const deleteDetails = asyncErrorHandler( async (req,res,next) => {
 module.exports = {
     updatePassword,
     updateDetails,
-    deleteDetails
+    deleteDetails,
+    getAllUsers
 }

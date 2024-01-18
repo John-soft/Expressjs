@@ -2,6 +2,11 @@ const express = require('express')
 const authController = require('../controllers/authController')
 const userController = require('../controllers/userController')
 const router = express.Router()
+
+
+router.route('/getAllUsers').get(
+    userController.getAllUsers)
+
 router.route('/updatePassword').patch(
     authController.protect,
     userController.updatePassword)

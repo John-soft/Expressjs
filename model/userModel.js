@@ -60,6 +60,10 @@ userSchema.pre('save', function(next){
     next()
 })
 
+userSchema.pre(/^find/, function(next){
+    this.find({active: {$ne: false}})
+})
+
 
 //mongoose method to comapre the password that the user provides and the oee in the database
 userSchema.methods.comparePassword = async function(pswd, pswdDB){
